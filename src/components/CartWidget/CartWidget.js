@@ -1,8 +1,9 @@
 import React from 'react'
+import carrito from "../Assets/icons/carro-de-la-compra.png"
 
 const CartWidget = () => {
   return (
-    <i className="bi bi-cart4"></i>
+      <img className='h-10 w-10' src={carrito} alt="carrito"/>
   )
 }
 

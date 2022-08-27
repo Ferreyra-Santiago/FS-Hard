@@ -20,6 +20,16 @@ const NavBar = () => {
       <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
         Contacto
       </a>
+      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+        Componentes de PC
+      </a>
+      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+        Perifericos
+      </a>
+      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+        Computadoras
+      </a>
+
       <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-stone-900 hover:text-black mr-4">
       <img className='h-4 w-10' src={darkMode} alt="darkmode"/>
       </a>
