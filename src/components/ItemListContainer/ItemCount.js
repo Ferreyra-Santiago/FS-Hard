@@ -1,8 +1,8 @@
 import React, {useState} from "react"
 
-const ItemCount = () => {
-    const stock =  10
-    let [counter, setcounter]= useState(0)
+const ItemCount = ({stock, initial}) => {
+
+    let [counter, setcounter]= useState(initial)
 
     let add = () =>{
         if(counter < stock){
@@ -21,8 +21,16 @@ const ItemCount = () => {
             return
         }
     } 
+    const onAdd= () =>{
+        console.log(`se Agregado ${counter}`)
+        alert(`se Agregado ${counter}`)
+    }
+    const agregarCantidad = ()=>{
+        onAdd(counter)
+    }
     return (
-    <div className="inline-flex items-center">
+<div>
+<div className=" inline-flex  items-center">
     <button onClick={diminish} className="bg-white rounded-l border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +67,10 @@ const ItemCount = () => {
         </svg>
     </button>
     </div>
+    <div className="mt-3">
+    <button className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={agregarCantidad}>Agregar</button>
+    </div>
+</div>
 )
 }
 
