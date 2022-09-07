@@ -3,10 +3,10 @@ import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 //viws
-import Home from './components/views/Home/Home';
-import Contact from './components/views/Contact/Contact';
-import PcGame from './components/views/PcGame/PcGame';
-import Detail from './components/views/Detail/Detail';
+import Home from './views/Home/Home';
+import Contact from './views/Contact/Contact';
+import PcGame from "./views/PcGame/PcGame"
+import Detail from './components/Detail/Detail';
 
 
 

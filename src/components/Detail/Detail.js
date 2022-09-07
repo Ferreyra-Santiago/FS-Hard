@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ItemListContainer from '../../ItemListContainer/ItemListContainer';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
 //import params para id
 import { useParams } from "react-router"
 
