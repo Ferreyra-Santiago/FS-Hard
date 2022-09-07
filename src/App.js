@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './views/Home/Home';
 import Contact from './views/Contact/Contact';
 import PcGame from "./views/PcGame/PcGame"
-import Detail from './components/Detail/Detail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
 
 
 
@@ -20,7 +21,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/pcgame' element={<PcGame/>}/>
-        <Route path='/detail/:id' element={<Detail/>}/>
+        <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
       </Routes>
       </div>
     </div>
