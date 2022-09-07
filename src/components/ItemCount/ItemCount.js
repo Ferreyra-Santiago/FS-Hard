@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, name}) => {
 
     let [counter, setcounter]= useState(initial)
 
@@ -22,8 +22,8 @@ const ItemCount = ({stock, initial}) => {
         }
     } 
     const onAdd= () =>{
-        console.log(`se Agregado ${counter}`)
-        alert(`se Agregado ${counter}`)
+        console.log(`se Agregado ${counter} ${name}`)
+        alert(`se Agregado: ${counter} / ${name}`)
     }
     const agregarCantidad = ()=>{
         onAdd(counter)

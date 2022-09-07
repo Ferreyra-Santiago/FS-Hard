@@ -2,13 +2,13 @@ import React from 'react'
 import logo from "../Assets/images/logo.png"
 import darkMode from "../Assets/icons/dark-mode.png"
 import CartWidget from '../CartWidget/CartWidget'
-
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-slate-200 p-6">
   <div>
-    <img className='h-14 w-52' src={logo} alt="logo"/>
+    <Link to="/"><img className='h-14 w-52' src={logo} alt="logo"/></Link>
   </div>
   <div className="block lg:hidden">
     <button id='boton' className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-black hover:border-black hover:bg-indigo-400 transition ease-in duration-500">
@@ -17,18 +17,15 @@ const NavBar = () => {
   </div>
   <div id='menu' className="w-full lg:text-right text-left block flex-grow lg:flex lg:items-center lg:w-auto mr-0">
     <div className="text-sm lg:flex-grow">
-      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+    <Link to="/" href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+        Inicio
+      </Link>
+      <Link to="/contact" href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
         Contacto
-      </a>
-      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
+      </Link>
+      <Link to="/pcgame" href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
         Componentes de PC
-      </a>
-      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
-        Perifericos
-      </a>
-      <a href="#responsive-header" className=" text-2xl block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black mr-4">
-        Computadoras
-      </a>
+      </Link>
 
       <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-stone-900 hover:text-black mr-4">
       <img className='h-4 w-10' src={darkMode} alt="darkmode"/>

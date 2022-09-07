@@ -1,33 +1,34 @@
 
 import React, { useEffect, useState } from 'react'
 import Item from '../../Item/Item';
+import Spinner from '../../Spinner/Spinner';
+
+//Link react-router-dom
+import { Link } from "react-router-dom"
 
 
 const ItemList = () => {
     const [game, usegame] = useState([]);
-    
-    useEffect(()=>{
-        const options = {
-            method: "GET",
-            headers: {
-              "X-RapidAPI-Key": "c04a1efecbmshca1167a45ce1001p1bdebdjsnb3f02b45fe3c",
-              "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com"
-            }
-          };
-          
-          fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", options)
-            .then((response) => response.json())
-            .then((response) => usegame(response))
-            .catch((err) => console.error(err));
-          
-    }, []);
+    const[isLoading, setIsLoading] = useState(false)
 
-    const array = game.splice(0, 32);
+    useEffect(()=>{
+      setIsLoading(true) 
+          fetch("https://fakestoreapi.com/products")
+          .then((response) => response.json())
+          .then((response) => usegame(response))
+          .catch((err) => console.error(err));
+        }, []);
+        setTimeout(()=>{            
+          setIsLoading(false)
+        },2000)
+          
       return (
     <div className='flex flex-wrap'>
         {
-            array.map((games)=>{
-                return <Item key={games.id} data={games}/>
+          isLoading ? <Spinner/> : 
+            game.map((items, idx)=>{
+                return <Link to={`/detail/${items.id}`} className="m-auto"><div>
+                  <Item key={idx} data={items}/></div></Link>
             })
         }
     </div>
