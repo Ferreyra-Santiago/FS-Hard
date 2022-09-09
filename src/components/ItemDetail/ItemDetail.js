@@ -16,7 +16,7 @@ const ItemDetail = ({data}) => {
         <p className="leading-relaxed">{data.description}</p>
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
             <div className="flex ml-6 items-center">
-                <ItemListContainer name={data.title}/>
+                <ItemListContainer name={data.image}/>
             <div className="relative">
                 <div className='flex ml-72'>
                 <span className="title-font font-medium text-2xl text-gray-900">Price: ${data.price}</span>
