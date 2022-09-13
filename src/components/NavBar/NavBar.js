@@ -31,7 +31,7 @@ const NavBar = () => {
       <img className='h-4 w-10' src={darkMode} alt="darkmode"/>
       </a>
       <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-black">
-        <CartWidget/>
+        <Link to={"/cart"}><CartWidget/></Link>
       </a>
     </div>
     <div>

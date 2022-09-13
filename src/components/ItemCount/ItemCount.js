@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const ItemCount = ({stock, initial, name}) => {
+const ItemCount = ({stock, initial, name, bolean}) => {
 
     let [counter, setcounter]= useState(initial)
 
@@ -24,8 +24,9 @@ const ItemCount = ({stock, initial, name}) => {
     const onAdd= () =>{
         console.log(`se Agregado ${counter} ${name}`)
         alert(`se Agregado: ${counter} / ${name}`)
+        bolean(false)
     }
-    const agregarCantidad = ()=>{
+ const agregarCantidad = ()=>{
         onAdd(counter)
     }
     return (
@@ -68,7 +69,7 @@ const ItemCount = ({stock, initial, name}) => {
     </button>
     </div>
     <div className="mt-3">
-    <button className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={agregarCantidad}>Agregar</button>
+    <button className="inline-block px-6 py-2.5 bg-[#6f5cef] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#7c42e9] hover:shadow-lg focus:bg-bg-[#6f5cef] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#7c42e9] active:shadow-lg transition duration-150 ease-in-out" onClick={agregarCantidad}>Agregar</button>
     </div>
 </div>
 )

@@ -7,6 +7,8 @@ import Home from './views/Home/Home';
 import Contact from './views/Contact/Contact';
 import PcGame from "./views/PcGame/PcGame"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './views/Cart/Cart';
+
 
 
 
@@ -21,8 +23,10 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/pcgame' element={<PcGame/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
       </Routes>
+
       </div>
     </div>
 </Router>
