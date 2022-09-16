@@ -1,8 +1,10 @@
 import React, {useState} from "react"
 
-const ItemCount = ({stock, initial, name, bolean}) => {
 
-    let [counter, setcounter]= useState(initial)
+
+const ItemCount = ({stock, onAdd}) => {
+
+    let [counter, setcounter]= useState(1)
 
     let add = () =>{
         if(counter < stock){
@@ -15,20 +17,15 @@ const ItemCount = ({stock, initial, name, bolean}) => {
 
     
     let diminish = () =>{
-        if(counter > 0){
+        if(counter > 1){
             setcounter(counter - 1)
         }else{
             return
         }
     } 
-    const onAdd= () =>{
-        console.log(`se Agregado ${counter} ${name}`)
-        alert(`se Agregado: ${counter} / ${name}`)
-        bolean(false)
-    }
- const agregarCantidad = ()=>{
-        onAdd(counter)
-    }
+
+
+ 
     return (
 <div>
 <div className=" inline-flex  items-center">
@@ -69,7 +66,7 @@ const ItemCount = ({stock, initial, name, bolean}) => {
     </button>
     </div>
     <div className="mt-3">
-    <button className="inline-block px-6 py-2.5 bg-[#6f5cef] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#7c42e9] hover:shadow-lg focus:bg-bg-[#6f5cef] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#7c42e9] active:shadow-lg transition duration-150 ease-in-out" onClick={agregarCantidad}>Agregar</button>
+    <button className="inline-block px-6 py-2.5 bg-[#6f5cef] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#7c42e9] hover:shadow-lg focus:bg-bg-[#6f5cef] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#7c42e9] active:shadow-lg transition duration-150 ease-in-out" onClick={()=>onAdd(counter)}>Agregar</button>
     </div>
 </div>
 )

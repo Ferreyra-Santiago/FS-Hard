@@ -22,7 +22,7 @@ console.log(detail)
 
   return (
     <div>
-      <ItemDetail data={detail}/>
+      <ItemDetail data={detail} stock={5} />
     </div>
   )
 }

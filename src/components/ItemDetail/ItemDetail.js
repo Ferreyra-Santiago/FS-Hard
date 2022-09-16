@@ -1,10 +1,18 @@
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import { useCartContext } from '../../CartContex'
+import ItemCount from '../ItemCount/ItemCount'
 
 
-const ItemDetail = ({data}) => {
-    const [buy, setBuy] = useState(true)
+const ItemDetail = ({data, stock}) => {
+  const { addProduct } = useCartContext();
+  const [buy, setBuy] = useState(false);
+  const handleOnAdd = (quantity) => {
+    alert(`Se agrego: ${quantity}  ${data.title}`);
+    setBuy(true);
+    addProduct(data ,quantity)
+  };
     return (
     <section className="text-gray-700 body-font overflow-hidden bg-white">
     <div className="container px-5 py-24 mx-auto">
@@ -18,15 +26,16 @@ const ItemDetail = ({data}) => {
         <p className="leading-relaxed">{data.description}</p>
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
             <div className="flex ml-6 items-center">
-             {
-            buy ? <ItemListContainer name={data.title} bolean={setBuy}/> :
-             
+            {buy ? (
             <Link to={`/cart`}>
-              <button className="inline-block px-6 py-2.5 bg-[#6f5cef] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#7c42e9] hover:shadow-lg focus:bg-bg-[#6f5cef] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#7c42e9] active:shadow-lg transition duration-150 ease-in-out">
+              <button className="py-4 px-6 mb-3 mx-auto shadow-lg shadow-slate-500/50 bg-[#6f5cef] text-white rounded hover:bg-[#5941f2] active:bg-sky-300 disabled:opacity-50  flex items-center justify-center">
                 Ir a Pagar
               </button>
             </Link>
-            }
+          ) : (
+            <ItemCount stock={stock} onAdd={handleOnAdd} />
+          )}
+            
             <div className="relative">
                 <div className='flex ml-72'>
                 <span className="title-font font-medium text-2xl text-gray-900">Price: ${data.price}</span>

@@ -3,6 +3,7 @@ import React from 'react'
 const item = ({data}) => {
 
   return (
+    <div className="max-w-2xl m-auto my-2 ">
         <div className="max-w-2xl m-auto my-2 shadow-xl">
           <div class=" bg-gray-100 flex justify-center items-center">
   <div class="container flex justify-center">
@@ -21,6 +22,7 @@ const item = ({data}) => {
     </div>
   </div>
 </div>
+        </div>
         </div>
   )
 }

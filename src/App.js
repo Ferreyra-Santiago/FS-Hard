@@ -8,6 +8,7 @@ import Contact from './views/Contact/Contact';
 import PcGame from "./views/PcGame/PcGame"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './views/Cart/Cart';
+import CartProvider from './CartContex';
 
 
 
@@ -16,6 +17,7 @@ import Cart from './views/Cart/Cart';
 function App() {
     return (
 <Router>
+  <CartProvider>
 <div >
       <NavBar/>
     <div className='flex flex-wrap '>
@@ -29,6 +31,7 @@ function App() {
 
       </div>
     </div>
+    </CartProvider>
 </Router>
     
 
