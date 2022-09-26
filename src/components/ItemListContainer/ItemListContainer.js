@@ -1,31 +1,48 @@
 import React, {useState, useEffect} from 'react'
 import Spinner from '../Spinner/Spinner';
 import ItemList from './ItemList/ItemList';
-
+//firebase
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../FireBase/FireBaseConfig';
 
 const ItemListContainer = ({greeting}) => {
-  const [game, usegame] = useState([]);
+  const [producto, setproducto] = useState([]);
   const[isLoading, setIsLoading] = useState(false)
+
+
+
+  const getProduct = async () =>{
+    const q = query(collection(db, "productos"))
+    const docs = []
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, " => ", doc.data());
+      docs.push({...doc.data(), id: doc.id})
+      });
+      setproducto(docs)
+  }
 
   useEffect(()=>{
     setIsLoading(true) 
-        fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((response) => usegame(response))
-        .catch((err) => console.error(err));
-      }, []);
-      setTimeout(()=>{            
-        setIsLoading(false)
-      },2000)
+
+    getProduct();
+
+  }, []);           
+  setTimeout(()=>{
+    setIsLoading(false)
+  },1000)
+
         
-      console.log(game)
+      console.log(producto)
   return (
     <div>
       <h2 className='text-4xl text-center ml-4 underline font-serif'>{greeting}</h2>
       <div>
         {
           isLoading ? <Spinner/> : 
-            <ItemList game={game}/>
+            <ItemList producto={producto}/>
         }
     </div>
     </div>

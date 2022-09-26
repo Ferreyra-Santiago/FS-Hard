@@ -5,10 +5,14 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 //viws
 import Home from './views/Home/Home';
 import Contact from './views/Contact/Contact';
-import PcGame from "./views/PcGame/PcGame"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './views/Cart/Cart';
 import CartProvider from './CartContex';
+import Product from './views/product/Product';
+import Footer from './components/Footer/Footer';
+
+
+
 
 
 
@@ -18,19 +22,19 @@ function App() {
     return (
 <Router>
   <CartProvider>
-<div >
+<div className='.app'>
       <NavBar/>
-    <div className='flex flex-wrap '>
+
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/pcgame' element={<PcGame/>}/>
+        <Route path='/product' element={<Product/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
       </Routes>
 
       </div>
-    </div>
+<Footer/>
     </CartProvider>
 </Router>
     

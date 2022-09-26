@@ -7,12 +7,12 @@ import Item from '../../Item/Item';
 import { Link } from "react-router-dom"
 
 
-const ItemList = ({game}) => {
+const ItemList = ({producto}) => {
 
       return (
 <div className='flex flex-wrap'>
 {
-  game.map((items, idx)=>{
+  producto.map((items, idx)=>{
     return <Link to={`/detail/${items.id}`}><div className="p-6">
       <Item key={idx} data={items}/></div></Link>
 }

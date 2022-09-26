@@ -1,11 +1,14 @@
 import React from 'react'
-import ItemListContainer from '../../components/ItemListContainer/ItemListContainer'
+import Carousel from '../../components/Carrousel/Carrousel'
+import Card from '../../components/CardHome/CardHome'
+import "swiper/css/bundle"
 
 
 const Home = () => {
   return (
     <div>
-    <ItemListContainer/>
+<Carousel/>
+    <Card/>
     </div>
   )
 }
