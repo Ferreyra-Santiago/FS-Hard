@@ -10,13 +10,13 @@ const product = () => {
         <h1 className="font-bold text-2xl border-b-2 p-2">productos</h1>
         <ul>
           <li className="p-1 font-semibold">
-            <Link to="/"> - Hoodie </Link>
+            <Link to="/Category/hoodies"> - Hoodie </Link>
           </li>
           <li className="p-1 font-semibold">
-            <Link to="/"> - Remera </Link>
+            <Link to="/Category/remera"> - Remera </Link>
           </li>
           <li className="p-1 font-semibold">
-            <Link to="/"> - Pantalon </Link>
+            <Link to="/Category/pantalon"> - Pantalon </Link>
           </li>
         </ul>
         <h1 className="font-bold text-2xl border-b-2 mt-6 p-2">Talle</h1>

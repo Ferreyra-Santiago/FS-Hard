@@ -1,8 +1,10 @@
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 
 //import params para id
 import { useParams } from "react-router"
 import ItemDetail from '../ItemDetail/ItemDetail';
+import Spinner from '../Spinner/Spinner';
 
 const Detail = () => {
 const [detail, usedetail] = useState([])
@@ -13,16 +15,16 @@ console.log(id)
 useEffect(()=>{
   
   
-  fetch(`https://fakestoreapi.com/products/${id}`)
-  .then((response) => response.json())
-  .then((response) => usedetail(response))
-  .catch((err) => console.error(err));
+const querydb = getFirestore()
+const querydoc = doc(querydb, "productos", id);
+getDoc(querydoc).then(res => usedetail({id:res, ...res.data()}))
+usedetail(false)
 },[id])
 console.log(detail)
 
   return (
     <div>
-      <ItemDetail data={detail} stock={5} />
+    {detail ?<ItemDetail data={detail} /> : <Spinner/>  } 
     </div>
   )
 }

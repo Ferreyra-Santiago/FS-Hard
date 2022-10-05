@@ -2,21 +2,34 @@ import React from 'react'
 import  buzo from "../Assets/images/buzo.jpg"
 import remera from "../Assets/images/remera.jpg"
 import pantalon from "../Assets/images/pantalon.jpg"
+import { Link } from 'react-router-dom'
 
 
-const Card = ({image, name, price}) => {
+
+const Card = ({name}) => {
   return (
-<div className='flex mt-2'>
+      <div className='flex mt-2'>
         <div className="mt-4 space-y-12 lg:space-y-0 lg:grid lg: lg:gap-x-8 max-w-xl mx-auto py-16 px-4 sm:pb-24 lg:-mt-16 sm:px-6 lg:max-w-7xl lg:px-8">
         <div
             aria-hidden="true"
             className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
         >
-            <img
-                src={remera}
-                alt={`${name} collection`}
-                className="w-full h-full object-center object-cover"
-            />
+            <Link to={"/Category/remera"}> <div
+  class="relative overflow-hidden bg-no-repeat bg-cover "
+  data-mdb-ripple="true" data-mdb-ripple-color="light"
+>
+
+<img
+src={remera}
+alt={`${name} collection`}
+className="w-full h-full object-center object-cover"
+/>
+  <a href="#!">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-40 transition duration-300 ease-in-out bg-slate-600"><h1 class="absolute text-5xl text-white text-opacity-1 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2">
+            Remeras</h1></div>
+    
+  </a>
+</div></Link>
         </div>
                 
 
@@ -29,11 +42,22 @@ const Card = ({image, name, price}) => {
                         aria-hidden="true"
                         className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
                     >
-                        <img
-                            src={buzo}
-                            alt={`${name} collection`}
-                            className="w-full h-full object-center object-cover"
-                        />
+            <Link to={"/Category/hoodies"}> <div
+  class="relative overflow-hidden bg-no-repeat bg-cover "
+  data-mdb-ripple="true" data-mdb-ripple-color="light"
+>
+
+<img
+src={buzo}
+alt={`${name} collection`}
+className="w-full h-full object-center object-cover"
+/>
+  <a href="#!">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-40 transition duration-300 ease-in-out bg-slate-600"><h1 class="absolute text-5xl text-white text-opacity-1 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2">
+            Hoddies</h1></div>
+    
+  </a>
+</div></Link>     
                     </div>
 </div>
         <div className="mt-4 space-y-12 lg:space-y-0 lg:grid lg: lg:gap-x-8 max-w-xl mx-auto py-16 px-4 sm:pb-24 lg:-mt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -43,11 +67,22 @@ const Card = ({image, name, price}) => {
             aria-hidden="true"
             className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
         >
-            <img
-                src={pantalon}
-                alt={`${name} collection`}
-                className="w-full h-full object-center object-cover"
-            />
+            <Link to={"/Category/pantalon"}> <div
+  class="relative overflow-hidden bg-no-repeat bg-cover "
+  data-mdb-ripple="true" data-mdb-ripple-color="light"
+>
+
+<img
+src={pantalon}
+alt={`${name} collection`}
+className="w-full h-full object-center object-cover"
+/>
+  <a href="#!">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-40 transition duration-300 ease-in-out bg-slate-600"><h1 class="absolute text-5xl text-white text-opacity-1 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2">
+            Pantalones</h1></div>
+    
+  </a>
+</div></Link>
         </div>
 </div>
 
@@ -57,3 +92,4 @@ const Card = ({image, name, price}) => {
 }
 
 export default Card
+
