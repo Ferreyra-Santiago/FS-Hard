@@ -16,7 +16,7 @@ const initialState = {
     infoAdicional: "",
 };
 
-const Form = ({button}) => {
+const Form = ({button, productoNombre, Cantidad, PagoTotal}) => {
 
     const [data, setData] = useState(initialState);
     const [orderID, setOrderID] = useState("");
@@ -26,10 +26,13 @@ const Form = ({button}) => {
     };
     const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
+
 
     const docRef = await addDoc(collection(db, "OrdenDeCompra"), {
         data,
+        productoNombre,
+        Cantidad,
+        PagoTotal
 
     });
 
@@ -57,6 +60,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.nombre}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -74,6 +78,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.apellido}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -93,6 +98,7 @@ const Form = ({button}) => {
             className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             value={data.email}
             onChange={handleOnChange}
+            required
             />
         </div>
 
@@ -111,6 +117,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.dni}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -127,6 +134,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.telefono}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -143,7 +151,9 @@ const Form = ({button}) => {
             min="0"
             className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             value={data.calle}
-            onChange={handleOnChange}/>
+            onChange={handleOnChange}
+            required
+            />
         </div>
         <div className="-mx-3 flex flex-wrap">
         <div className="w-full px-3 sm:w-1/2">
@@ -160,6 +170,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.numero}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -176,6 +187,7 @@ const Form = ({button}) => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 value={data.codigoPostal}
                 onChange={handleOnChange}
+                required
             />
             </div>
         </div>
@@ -192,6 +204,7 @@ const Form = ({button}) => {
             className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             value={data.infoAdicional}
             onChange={handleOnChange}
+            required
             ></textarea>
         </div>
 

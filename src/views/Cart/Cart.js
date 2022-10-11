@@ -6,12 +6,8 @@ import ItemCartContainer from "../../components/ItemCartContainer/ItemCartContai
 
 const Cart = () => {
   const { cart } = useCartContext();
-  console.log(cart);
 
-  const price = cart.map((product) =>{
-    return product.precio * product.quantity
-  })
-  console.log(price)
+
 
   return (
     <div>

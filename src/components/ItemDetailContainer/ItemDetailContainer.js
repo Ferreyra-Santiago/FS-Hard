@@ -10,7 +10,7 @@ const Detail = () => {
 const [detail, usedetail] = useState([])
 
 let {id} = useParams()
-console.log(id)
+
 
 useEffect(()=>{
   
@@ -20,7 +20,7 @@ const querydoc = doc(querydb, "productos", id);
 getDoc(querydoc).then(res => usedetail({id:res, ...res.data()}))
 usedetail(false)
 },[id])
-console.log(detail)
+
 
   return (
     <div>

@@ -19,15 +19,6 @@ const product = () => {
             <Link to="/Category/pantalon"> - Pantalon </Link>
           </li>
         </ul>
-        <h1 className="font-bold text-2xl border-b-2 mt-6 p-2">Talle</h1>
-        <ul>
-          <li className="p-1 font-semibold">
-            <Link to="/"> - Talle 1 </Link>
-          </li>
-          <li className="p-1 font-semibold">
-            <Link to="/"> - Talle 2 </Link>
-          </li>
-        </ul>
       </div>
       <div className="col-span-4">
         <ItemListContainer />

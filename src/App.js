@@ -12,6 +12,7 @@ import Product from './views/product/Product';
 import Footer from './components/Footer/Footer';
 import Category from "./views/Category/Category"
 import Checkout from './views/Checkout/Checkout';
+import PreguntasFrecuentes from './views/PreguntasFrecuentes/PreguntasFrecuentes';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path='/product' element={<Product/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
+        <Route path='/PreguntasFrecuentes' element={<PreguntasFrecuentes/>} />
         <Route path='/Category/:Categoria' element={<Category/>}/>
         <Route path='/checkout' element={<Checkout/>} />
       </Routes>

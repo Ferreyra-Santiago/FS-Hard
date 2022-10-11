@@ -15,7 +15,7 @@ const Category = () => {
     const [producto, setproducto] = useState([]);
 
 
-	console.log(producto);
+
 
 	const { Categoria } = useParams();
 
@@ -24,12 +24,9 @@ const Category = () => {
 			const q = query(collection(db, 'productos'), where('categoria', '==', Categoria));
 			const docs = [];
 			const querySnapshot = await getDocs(q);
-			// console.log('DATA:', querySnapshot);
 			querySnapshot.forEach((doc) => {
-				// console.log('DATA:', doc.data(), 'ID:', doc.id);
 				docs.push({ ...doc.data(), id: doc.id });
 			});
-			// console.log(docs);
 			setproducto(docs);
 		};
 		getAlbums();
@@ -54,15 +51,6 @@ const Category = () => {
         <Link to="/product"> - Todos los Productos </Link>
         </li>
     </ul>
-    <h1 className="font-bold text-2xl border-b-2 mt-6 p-2">Talle</h1>
-    <ul>
-        <li className="p-1 font-semibold">
-        <Link to="/"> - Talle 1 </Link>
-        </li>
-        <li className="p-1 font-semibold">
-        <Link to="/"> - Talle 2 </Link>
-        </li>
-    </ul>
     </div>
     <div className="flex flex-wrap col-span-4  ">
     {producto.map((data) => {
@@ -77,7 +65,3 @@ const Category = () => {
 
 export default Category;
 
-// {producto.map((data) => {
-//     return <Item data={data} />;
-// })
-// }

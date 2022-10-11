@@ -17,8 +17,6 @@ const ItemListContainer = ({greeting}) => {
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      // console.log(doc.id, " => ", doc.data());
       docs.push({...doc.data(), id: doc.id})
       });
       setproducto(docs)
@@ -35,7 +33,7 @@ const ItemListContainer = ({greeting}) => {
   },1000)
 
         
-      console.log(producto)
+
   return (
     <div>
       <h2 className='text-4xl text-center ml-4 underline font-serif'>{greeting}</h2>
